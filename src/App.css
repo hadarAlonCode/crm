@@ -41,7 +41,7 @@
 #header{
   display: grid;
   grid-template-columns: repeat(7, 1fr); 
-  background-color: rgb(238, 182, 62)
+  background-color: rgb(255, 215, 40);
 }
 
 .badgesSection{
@@ -96,3 +96,76 @@
 .chart{
   justify-self: center
 }
+
+.navBar a  {
+  color: rgb(255, 255, 255);
+  text-decoration: none; 
+}
+
+.navBar{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 8fr;
+  
+  background-color: black;
+  height: 50px;
+}
+
+.nav{
+  text-align: center;
+  padding-top:12px
+}
+
+.nav:hover{
+  background-color: rgb(34, 30, 32);
+}
+
+.actionSection{
+  margin-left: 30px;
+}
+.actionHeading{
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.updateSection{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-top: 10px;
+  width: 500px;
+}
+
+.actionButton{
+  text-align: center;
+  /* color: rgb(255, 215, 40); */
+  background-color: rgb(255, 215, 40);
+  margin-left:10px;
+  padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 10px
+}
+
+.updateSectionSold{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-top: 10px;
+  width: 500px;
+}
+
+.actionInputSections{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.addButton{
+  background-color: rgb(255, 215, 40);
+    width: 250px;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    border-radius: 10px
+}
+

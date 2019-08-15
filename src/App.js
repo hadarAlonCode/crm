@@ -20,13 +20,20 @@ class App extends Component {
     }
   }
 
-//read the data
-   componentDidMount() {
-    setTimeout(() => {
-      let response = data
-      this.setState({ data: response })
-    }, 100)   
+
+  async componentDidMount() {
+    const response = await axios.get("http://localhost:4000/clients")
+    this.setState({ data: response.data })
   }
+
+
+//read the data from json===========
+  //  componentDidMount() {
+  //   setTimeout(() => {
+  //     let response = data
+  //     this.setState({ data: response })
+  //   }, 100)   
+  // }
 
 
 

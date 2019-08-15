@@ -6,11 +6,10 @@ import Badge4 from './Badges/Badge4';
 
 var moment = require('moment');
 
-
 class Badges extends Component {
     render() {
 
-        // new Month ======================================
+        // new Month ==
         let currentMonthString = moment().format("LLL").split(' ')[0]
         let currentMonth = moment().format("L").split('/')[0]
         let currentYear = new Date().getFullYear() - 1

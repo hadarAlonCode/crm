@@ -15,15 +15,13 @@ class Input extends Component {
         }
 
 
-
-
     render() {
+       
         return (
-
-            <div>
-                <input id="input" list="browsers" name="browser" placeholder="Search Name..." onInput={this.handleInput} required ></input>
+            <div className="actionInputSections">
+                <span>Client:</span> <input id="input" list="browsers" name="browser" placeholder="Search Name..." onInput={this.handleInput} required ></input>
                 <datalist id="browsers">
-                {this.props.clients.filter( c => c.name.toLowerCase().includes(this.state.name.toLowerCase())).map(m =><option> {m.name} </option>)}
+                {this.props.clients.map((m, i) => <option key={i}>{m.name}</option>)}
                 </datalist>
               
             </div>

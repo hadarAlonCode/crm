@@ -18,17 +18,8 @@ import {
 
 class Chart1 extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         data: this.props.TopEmployees
-    //       }
-    // }
-    
-
-
     render() {
-        console.log(this.props.TopEmployees);
+
         return (
             
                 <ComposedChart
@@ -47,7 +38,7 @@ class Chart1 extends Component {
                     <YAxis dataKey="name" type="category" />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="sell" barSize={20} fill="#413ea0" />
+                    <Bar dataKey="sales" barSize={20} fill="#413ea0" />
                 </ComposedChart>
             
         );
