@@ -56,8 +56,6 @@ class Update extends Component {
         this.props.update(this.getClientId(), "emailType", this.state.upadeEmailType)
     }
 
-
-
     getupdateDeclare = () => {
         if (!this.getClientId()) {
             return alert("need to put name")
@@ -71,11 +69,11 @@ class Update extends Component {
         this.setState({ [name]: value })
     }
 
-     PopupExample = () => (
-        <Popup trigger={<button> Trigger</button>} position="right center">
-          <div>Popup content here !!</div>
-        </Popup>
-      );
+    //  PopupExample = () => (
+    //     <Popup trigger={<button> Trigger</button>} position="right center">
+    //       <div>Popup content here !!</div>
+    //     </Popup>
+    //   );
 
     render() {
         return (
@@ -87,8 +85,7 @@ class Update extends Component {
                     <select name="upadeOwner" onInput={this.handleInputOwner}>
                         {this.duplicates(this.props.clients, "owner").map((c, i) => <option key={i}>{c[0]} </option>)}
                     </select>
-               <Popup trigger={ <span className="actionButton" onClick={this.getupdateOwner} >TRANSFER</span>} position="right center"> <div>Client TRANSFER</div>
-                </Popup>
+                <span className="actionButton" onClick={this.getupdateOwner} >TRANSFER</span>
                 </div>
 
                 <div className="updateSection">

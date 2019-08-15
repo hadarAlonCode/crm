@@ -26,7 +26,7 @@ class Clients extends Component {
                 <Filter filter={this.filter} value={this.state.input}/>
                 <div className="clients">
                     <Header />
-                    {this.props.state.filter(c => c[this.state.category].toLowerCase().includes(this.state.input.toLowerCase())).map((c, i) => <Client key={i} client={c} />)}
+                    {this.props.state.filter(c => c[this.state.category].toLowerCase().includes(this.state.input.toLowerCase())).map((c, i) => <Client key={i} client={c} upatePopUpInfo={this.props.upatePopUpInfo} />)}
                 </div>
             </div>
         );

@@ -5,13 +5,13 @@ import Add from './Add';
 
 class Actions extends Component {
 
-    update = (id, key, value) => {
-        console.log(id)
-        console.log(key)
-        console.log(value)
-        let clientData = { id, key, value }
-        axios.put("http://localhost:4000/client", clientData)
-    }
+    // update = (id, key, value) => {
+    //     console.log(id)
+    //     console.log(key)
+    //     console.log(value)
+    //     let clientData = { id, key, value }
+    //     axios.put("http://localhost:4000/client", clientData)
+    // }
 
     addClient = (newClient) => {
         console.log(newClient)
@@ -22,7 +22,7 @@ class Actions extends Component {
         return (
             <div className="actionSection">
                 <div className="actionHeading">UPDATE</div>
-                <Update clients={this.props.state} update={this.update} />
+                <Update clients={this.props.state} update={this.update} update={this.props.update}/>
                 <br></br>
                 <hr></hr>
                 <div className="actionHeading">ADD CLIENT</div>

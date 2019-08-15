@@ -29,6 +29,15 @@ router.post('/client', function (req, res) {
 })
 
 
+router.put("/client/:clientID", (req,res) => {
+    const ID = req.params.clientID
+    const info = req.body
+    Client.findOneAndUpdate({ _id: ID }, { name: info.name, country: info.country }, (err, body) => {
+        res.end()
+    })
+})
+
+
 //update
 router.put('/client', function (req, res) {
     console.log(req.body)

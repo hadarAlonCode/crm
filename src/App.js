@@ -26,6 +26,25 @@ class App extends Component {
     this.setState({ data: response.data })
   }
 
+  update = async (id, key, value) => {
+    console.log(id)
+    console.log(key)
+    console.log(value)
+    let clientData = { id, key, value }
+    console.log(clientData);
+    
+    await axios.put("http://localhost:4000/client", clientData)
+    this.componentDidMount()
+}
+
+
+
+  upatePopUpInfo = async (name, surname, country, clientID) => {
+  await axios.put(`http://localhost:4000/client/${clientID}`, { name: `${name} ${surname}`, country })
+  await this.getAllClients()
+}
+
+
 
 //read the data from json===========
   //  componentDidMount() {
@@ -43,8 +62,8 @@ class App extends Component {
         <div className="App">
         <Route path="/" exact component={Home}/>
           <Navbar />
-        <Route path="/clients" exact render={() => <Clients state={this.state.data}/>} />
-        <Route path="/actions" exact render={() => <Actions state={this.state.data} />}/>
+        <Route path="/clients" exact render={() => <Clients state={this.state.data} upatePopUpInfo={this.upatePopUpInfo}/>} />
+        <Route path="/actions" exact render={() => <Actions state={this.state.data} update={this.update} />}/>
         <Route path="/analytics" exact render={() => <Analytics state={this.state.data} />}/>
         </div>
       </Router>
