@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -30,4 +30,69 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.client{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); 
+}
+
+#header{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); 
+  background-color: rgb(238, 182, 62)
+}
+
+.badgesSection{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) ;
+}
+
+.badge{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr ;
+  grid-template-areas: 
+  "i n"
+  "i t";
+}
+
+.iconBudge{
+  grid-area: i;
+  border-radius: 80%;
+  margin-left: 3vw;
+  color: rgb(20, 211, 61)
+}
+   
+
+.numberBudge{
+  grid-area: n;
+  font-size: 30px;
+}
+
+.textBudge{
+  grid-area: t;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.fas{
+    font-size: 45px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 13px;
+}
+
+.chartsSection{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr ;
+  
+}
+
+.chart{
+  justify-self: center
 }
