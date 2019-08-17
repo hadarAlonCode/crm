@@ -13,10 +13,10 @@ class Actions extends Component {
     //     axios.put("http://localhost:4000/client", clientData)
     // }
 
-    addClient = (newClient) => {
-        console.log(newClient)
-        axios.post("http://localhost:4000/client", newClient)
-    }
+    // addClient = (newClient) => {
+    //     console.log(newClient)
+    //     axios.post("http://localhost:4000/client", newClient)
+    // }
 
     render() {
         return (
@@ -26,7 +26,7 @@ class Actions extends Component {
                 <br></br>
                 <hr></hr>
                 <div className="actionHeading">ADD CLIENT</div>
-                <Add clients={this.props.state} addClient={this.addClient} />
+                <Add clients={this.props.state} addClient={this.props.addClient}  />
             </div>
         );
     }

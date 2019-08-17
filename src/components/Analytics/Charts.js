@@ -18,9 +18,6 @@ class Charts extends Component {
             }
     }
 
-
-
-
 //chart1
 
     TopEmployees = () => {
@@ -90,16 +87,39 @@ class Charts extends Component {
          return categorySalesArr
         }
 
+        //chart 3 - sales Since
+          salesSince =  () => {
+
+            let currentMonth =  moment().format("L").split("/")[0] 
+            let currentYear =  moment().format("L").split("/")[2] - 1
+            let daysArr =  this.props.clients.filter(c => c.firstContact.split("-")[1] == currentMonth && c.firstContact.split("-")[0] == currentYear.toString() && c.sold).map(c => moment(c.firstContact).format("L").split("/")[1])
+            let days = {}
+           
+
+            for (let c of daysArr) {
+                if (days[c]) {
+                    days[c] += 1
+                } else {
+                    days[c] = 1
+                }
+            }
+            let datesArr = Object.entries(days)
+            let newDaysArr = datesArr.map(c => { return { day: c[0], sales: c[1] } })
+
+            return  newDaysArr
+        }
+
+        
+        
+
 
     //
     handleInputCategory=(e)=>{
         const value = e.target.value
-        // const name = e.target.name
         this.setState({filterCategory : value})
         }
 
     render() {
-
         let category = this.state.filterCategory == "Country" ? this.filterChart("country")
          : this.state.filterCategory == "Email" ? this.filterChart("emailType") 
          : this.state.filterCategory == "Owner" ? this.filterChart("owner") 
@@ -107,19 +127,19 @@ class Charts extends Component {
 
         return (
             <div className="chartsSection">
-                <div className="chart">Top Employees
+                <div className="chart"><span className="chartTitle">Top Employees</span>
                    <Chart1 TopEmployees={this.TopEmployees()}/>
                 </div>
-                <div className="chart">Sales by 
+                <div className="chart"><span className="chartTitle">Sales by </span>
                    <select name="filterChart" onInput={this.handleInputCategory}>
                  {this.state.Category.map((c,i) => <option key={i}>{c} </option>)}
                    </select>
                    <Chart2 countriesSalesArr={category}/>
                 </div>
-                <div className="chart">Sales Since "last mounth"
-                   <Chart3 />
+                <div className="chart" ><span className="chartTitle">Sales Since "last mounth"</span>
+                   <Chart3 saleSince={this.salesSince()} />
                 </div>
-                <div className="chart">Client Acquisition
+                <div className="chart"><span className="chartTitle">Client Acquisition</span>
                   <Chart4 />
                 </div>
             </div>

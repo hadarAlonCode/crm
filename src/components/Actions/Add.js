@@ -56,7 +56,7 @@ class Add extends Component {
                 <div className="actionInputSections">Surname<input id="input" name="Surname" placeholder="Surname..." onInput={this.handleInput} required ></input></div>
                 <div className="actionInputSections">Country<input id="input" name="Country" placeholder="Country..." onInput={this.handleInput} required ></input></div>
                 <div className="actionInputSections">Owner<input id="input" name="Owner" placeholder="Owner..." onInput={this.handleInput} required ></input></div>
-                <div className="addButton" onClick={this.addNewClient}>Add New Client</div>
+                <div className="addButton" id="Button" onClick={this.addNewClient}>Add New Client</div>
 
 
             </div>

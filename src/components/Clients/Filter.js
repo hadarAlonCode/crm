@@ -4,23 +4,24 @@ class Filter extends Component {
        super()
        this.state = {
            category: "owner",
-           name: "",
-           country: "",
-           sold: "",
-           email: "",
-           owner: ""
+        //    name: "",
+        //    country: "",
+        //    sold: "",
+        //    email: "",
+        //    owner: ""
        }
    }
    handleInput = (e) => {
+      if ( this.state.category == "sold" ){ e.target.value = true }
        this.props.filter(e.target.value, this.state.category)
    }
    handlSelect = (e) => {
-       let value = e.target.value
-       this.setState({ category: value.toLowerCase() })
+       let value = e.target.value.toLowerCase()
+       this.setState({ category: value })
    }
    render() {
        return (
-           <div>
+           <div className="mainfilter">
                <input id="input" value={this.props.value} placeholder="Search" onChange={this.handleInput}></input>
                <select onInput={this.handlSelect}>
                    <option>Owner</option>

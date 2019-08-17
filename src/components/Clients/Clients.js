@@ -7,16 +7,19 @@ class Clients extends Component {
     constructor() {
         super()
         this.state = {
-            category: "owner",
+            category: "name",
             input: ""
 
         }
     }
 
-    filter = (input, category) => {
+    filter = (xinput , ycategory) => {
+        if (ycategory == "email"){
+            ycategory = "emailType"  
+        }
       this.setState({
-          category,
-          input
+          category: ycategory,
+          input: xinput
       })
    }
 

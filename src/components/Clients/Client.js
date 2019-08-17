@@ -9,12 +9,12 @@ class Client extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // fullName:  this.props.client.name,
             updateName: props.client.name.split(' ')[0],
             updateSurname: props.client.name.split(' ')[1],
-            country: props.client.country,
+            updateCountry: props.client.country,
         }
     }
+    
 // i have another put request
 
     // getupdateName = () => {
@@ -31,12 +31,20 @@ class Client extends Component {
     //     this.props.update(this.props.client._id, "country", this.state.country)
     // }
 
+    capitalFirstChart(str){
+        return str.charAt(0).toUpperCase() + str.slice(1)
+        }
 
-    // handleInputOwner = (e) => {
-    //     const value = e.target.value
-    //     const name = e.target.name
-    //     this.setState({ [name]: value })
-    // }
+    updateClient=()=>{
+        return this.props.upatePopUpInfo(this.state.updateName, this.state.updateSurname, this.state.updateCountry, this.props.client._id)    
+    }
+
+
+    handleInput = (e) => {
+        const value = e.target.value
+        const name = e.target.name
+        this.setState({ [name]: this.capitalFirstChart(value) })
+    }
 
     render() {
         let name = this.props.client.name.split(' ')[0]
@@ -58,22 +66,17 @@ class Client extends Component {
                             &times;</a>
                         <div className="header"> Update Client </div>
                         <div className="content">
-                          <div><span>Name:</span> <input type="text"></input></div>
-                          <div><span>Surname:</span> <input type="text"></input></div>
-                          <div><span>country:</span> <input type="text"></input></div>      
+                          <div className="contentPopup"><span>Name:</span><input placeholder=" Update Name.." className="input" name="updateName" type="text" onInput={this.handleInput}></input></div>
+                          <div className="contentPopup"><span>Surname:</span> <input placeholder=" Update Suname.." name="updateSurname" type="text" onInput={this.handleInput}></input></div>
+                          <div className="contentPopup" ><span>country:</span> <input placeholder=" Update Country.." name="updateCountry" type="text" onInput={this.handleInput}></input></div>      
                            </div>
-
-                        <div className="actions">
-                            <Popup
-                                trigger={<button className="button"> Update </button>}
-                                position="top center"
-                                closeOnDocumentClick>
-                            </Popup>
+                        <div className="actions">  
+                        <div id="Button" onClick={this.updateClient} className="popButton"> Update </div>     
                         </div>
                     </div>
                 )}
             </Popup>
-
+            // <div class="wrapper"> <input class="input" placeholder="Please Enter Text" type="text" ><span class="underline"></span></div>
         );
     }
 }

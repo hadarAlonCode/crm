@@ -85,7 +85,7 @@ class Update extends Component {
                     <select name="upadeOwner" onInput={this.handleInputOwner}>
                         {this.duplicates(this.props.clients, "owner").map((c, i) => <option key={i}>{c[0]} </option>)}
                     </select>
-                <span className="actionButton" onClick={this.getupdateOwner} >TRANSFER</span>
+                <span id="Button" className="actionButton" onClick={this.getupdateOwner} >TRANSFER</span>
                 </div>
 
                 <div className="updateSection">
@@ -93,13 +93,13 @@ class Update extends Component {
                     <select name="upadeEmailType" onInput={this.handleInputOwner}>
                         {this.duplicates(this.props.clients, "emailType").map((c, i) => <option key={i}>{c[0]} </option>)}
                     </select>
-                    <span className="actionButton" onClick={this.getupdateEmailType}>SEND</span>
+                    <span id="Button" className="actionButton" onClick={this.getupdateEmailType}>SEND</span>
                 </div>
 
                 <div className="updateSectionSold">
                     <span>Declare Sale! </span>
 
-                    <span className="actionButton" onClick={this.getupdateDeclare}>DECLARE</span>
+                    <span id="Button" className="actionButton" onClick={this.getupdateDeclare}>DECLARE</span>
                 </div>
 
                 
