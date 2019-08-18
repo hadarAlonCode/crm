@@ -46,8 +46,7 @@ class Charts extends Component {
     }
 
 
-     //chart2
-    // *********filter by country*********
+     //chart2 *********filter by *********
     filterChart=(value)=>{
     let soldArray = this.props.clients.filter(c=> c.sold)
      let categoryObj = {}
@@ -66,7 +65,7 @@ class Charts extends Component {
     }
 
 
-     // ********filter by month*********
+     //chart2 ********filter by month*********
 
     filterMonthChart=()=>{
         let soldArray = this.props.clients.filter(c=> c.sold)
@@ -87,7 +86,8 @@ class Charts extends Component {
          return categorySalesArr
         }
 
-        //chart 3 - sales Since
+        //chart 3 *********sales Since*********
+
           salesSince =  () => {
 
             let currentMonth =  moment().format("L").split("/")[0] 
