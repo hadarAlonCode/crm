@@ -72,6 +72,12 @@
   border-radius: 80%;
   margin-left: 3vw;
   color: #FFC107;
+  font-size: 45px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 13px;
 }
    
 
@@ -86,14 +92,7 @@
   font-weight: bold;
 }
 
-.iconBudge{
-    font-size: 45px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    padding: 13px;
-}
+
 .fa-check{
   font-size: 20px;
 }
@@ -240,7 +239,6 @@
   background-color: black !important;
   opacity: 0.8;
   
-
 }
 
 .contentPopup{
@@ -316,7 +314,7 @@ select {
   padding-left: 8px;
 }
 
-.mainfilter{
+.mainFilter{
   padding: 5px;
 }
 

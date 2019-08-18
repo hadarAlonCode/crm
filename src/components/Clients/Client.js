@@ -76,7 +76,6 @@ class Client extends Component {
                     </div>
                 )}
             </Popup>
-            // <div class="wrapper"> <input class="input" placeholder="Please Enter Text" type="text" ><span class="underline"></span></div>
         );
     }
 }

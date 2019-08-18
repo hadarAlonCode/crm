@@ -21,7 +21,7 @@ class Filter extends Component {
    }
    render() {
        return (
-           <div className="mainfilter">
+           <div className="mainFilter">
                <input id="input" value={this.props.value} placeholder="Search" onChange={this.handleInput}></input>
                <select onInput={this.handlSelect}>
                    <option>Owner</option>
