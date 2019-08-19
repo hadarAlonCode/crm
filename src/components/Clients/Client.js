@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Popup from "reactjs-popup";
+import {ToastsContainer, ToastsStore} from 'react-toasts';
+
 
 var moment = require('moment');
 
@@ -36,7 +38,8 @@ class Client extends Component {
         }
 
     updateClient=()=>{
-        return this.props.upatePopUpInfo(this.state.updateName, this.state.updateSurname, this.state.updateCountry, this.props.client._id)    
+         this.props.upatePopUpInfo(this.state.updateName, this.state.updateSurname, this.state.updateCountry, this.props.client._id)   
+         return ToastsStore.success("Updated Client!") 
     }
 
 
@@ -73,6 +76,7 @@ class Client extends Component {
                         <div className="actions">  
                         <div id="Button" onClick={this.updateClient} className="popButton"> Update </div>     
                         </div>
+                        <ToastsContainer store={ToastsStore}/>
                     </div>
                 )}
             </Popup>

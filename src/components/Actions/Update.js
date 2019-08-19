@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Input from './Input';
+import {ToastsContainer, ToastsStore} from 'react-toasts';
 
-import Popup from "reactjs-popup";
+
+// import Popup from "reactjs-popup";
 
 class Update extends Component {
 
@@ -44,23 +46,28 @@ class Update extends Component {
 
     getupdateOwner = () => {
         if (!this.getClientId()) {
-            return alert("need to put name")
+            return  ToastsStore.error("need to put name")
         }
         this.props.update(this.getClientId(), "owner", this.state.upadeOwner)
+        ToastsStore.success("Owner updated!")
     }
 
     getupdateEmailType = () => {
         if (!this.getClientId()) {
-            return alert("need to put name")
+            return  ToastsStore.error("need to put name")
         }
         this.props.update(this.getClientId(), "emailType", this.state.upadeEmailType)
+        ToastsStore.success("Email Type updated!")
+
     }
 
     getupdateDeclare = () => {
         if (!this.getClientId()) {
-            return alert("need to put name")
+            return  ToastsStore.error("need to put name")
         }
         this.props.update(this.getClientId(), "sold", true)
+        ToastsStore.success("Client Sold!")
+
     }
 
     handleInputOwner = (e) => {
@@ -101,7 +108,7 @@ class Update extends Component {
 
                     <span id="Button" className="actionButton" onClick={this.getupdateDeclare}>DECLARE</span>
                 </div>
-
+                <ToastsContainer store={ToastsStore}/>
                 
             </div>
         );

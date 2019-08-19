@@ -13,6 +13,7 @@
     "react-inputs-validation": "^3.3.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.0",
+    "react-toasts": "^3.0.3",
     "reactjs-popup": "^1.4.2",
     "recharts": "^1.7.1"
   },

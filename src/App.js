@@ -21,20 +21,25 @@ class App extends Component {
   }
 
 
-  async componentDidMount() {
+  async getClientData() {
     const response = await axios.get("http://localhost:4000/clients")
     this.setState({ data: response.data })
   }
 
+  componentDidMount = () => {
+    this.getClientData()
+  }
+
+ 
   update = async (id, key, value) => {
     let clientData = { id, key, value }
     await axios.put("http://localhost:4000/client", clientData)
-    this.componentDidMount()
+    this.getClientData()
 }
 
 addClient =async  (newClient) => {
   await axios.post("http://localhost:4000/client", newClient)
-  this.componentDidMount()
+  this.getClientData()
 }
 
   upatePopUpInfo = async (name, surname, country, clientID) => {
@@ -44,7 +49,7 @@ addClient =async  (newClient) => {
     console.log(clientID);
 
   await axios.put(`http://localhost:4000/client/${clientID}`, { name: `${name} ${surname}`, country })
-  await this.componentDidMount()
+  await this.getClientData()
 }
 
 

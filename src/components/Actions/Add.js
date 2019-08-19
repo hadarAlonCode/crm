@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {ToastsContainer, ToastsStore} from 'react-toasts';
+
 
 
 class Add extends Component {
@@ -33,7 +35,7 @@ class Add extends Component {
 
     addNewClient = (e) => {
         if (this.validate()) {
-            return alert("All fields must be filled")
+            return ToastsStore.error("All fields must be filled")
         } else {
             this.props.addClient({
                 name: `${this.state.firstName} ${this.state.Surname}`,
@@ -44,6 +46,7 @@ class Add extends Component {
                 emailType: null,
                 email: ""
             });
+            ToastsStore.success("Add new client!")
         }
 
 
