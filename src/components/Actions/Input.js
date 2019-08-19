@@ -16,7 +16,6 @@ class Input extends Component {
 
 
     render() {
-       
         return (
             <div className="actionInputSections">
                 <span>Client:</span> <input id="input" list="browsers" name="browser" placeholder="Search Name..." onInput={this.handleInput} required ></input>

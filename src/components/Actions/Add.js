@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {ToastsContainer, ToastsStore} from 'react-toasts';
-
-
+import { ToastsContainer, ToastsStore } from 'react-toasts';
 
 class Add extends Component {
     constructor() {
@@ -14,10 +12,10 @@ class Add extends Component {
         }
     }
 
-    
-    capitalFirstChart(str){
+
+    capitalFirstChart(str) {
         return str.charAt(0).toUpperCase() + str.slice(1)
-        }
+    }
 
     handleInput = (e) => {
         const value = e.target.value
@@ -48,8 +46,6 @@ class Add extends Component {
             });
             ToastsStore.success("Add new client!")
         }
-
-
     }
 
     render() {

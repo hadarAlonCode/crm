@@ -4,7 +4,6 @@ const Client = require('../models/Client')
 const mongoose = require('mongoose')
 const data = require('../../src/data.json')
 
-
 //post json in DB
     // const uploadData = function(){
     //     for(let c of data){

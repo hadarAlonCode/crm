@@ -76,12 +76,6 @@ class Update extends Component {
         this.setState({ [name]: value })
     }
 
-    //  PopupExample = () => (
-    //     <Popup trigger={<button> Trigger</button>} position="right center">
-    //       <div>Popup content here !!</div>
-    //     </Popup>
-    //   );
-
     render() {
         return (
             <div>
@@ -90,7 +84,7 @@ class Update extends Component {
                 <div className="updateSection">
                     <span>Transfer ownership to </span>
                     <select name="upadeOwner" onInput={this.handleInputOwner}>
-                        {this.duplicates(this.props.clients, "owner").map((c, i) => <option key={i}>{c[0]} </option>)}
+                    {this.duplicates(this.props.clients, "owner").map((c, i) => <option key={i}>{c[0]} </option>)}
                     </select>
                 <span id="Button" className="actionButton" onClick={this.getupdateOwner} >TRANSFER</span>
                 </div>
@@ -98,14 +92,13 @@ class Update extends Component {
                 <div className="updateSection">
                     <span>Send Email </span>
                     <select name="upadeEmailType" onInput={this.handleInputOwner}>
-                        {this.duplicates(this.props.clients, "emailType").map((c, i) => <option key={i}>{c[0]} </option>)}
+                    {this.duplicates(this.props.clients, "emailType").map((c, i) => <option key={i}>{c[0]} </option>)}
                     </select>
                     <span id="Button" className="actionButton" onClick={this.getupdateEmailType}>SEND</span>
                 </div>
 
                 <div className="updateSectionSold">
                     <span>Declare Sale! </span>
-
                     <span id="Button" className="actionButton" onClick={this.getupdateDeclare}>DECLARE</span>
                 </div>
                 <ToastsContainer store={ToastsStore}/>
