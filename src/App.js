@@ -8,8 +8,7 @@ import Clients from './components/Clients/Clients';
 import Analytics from './components/Analytics/Analytics';
 import Actions from './components/Actions/Actions';
 import Home from './components/Home';
-import data from './data.json';
-
+// import data from './data.json';
 
 class App extends Component {
 
@@ -19,7 +18,6 @@ class App extends Component {
       data: []
     }
   }
-
 
   async getClientData() {
     const response = await axios.get("http://localhost:4000/clients")
@@ -52,17 +50,13 @@ addClient =async  (newClient) => {
   await this.getClientData()
 }
 
-
-
-//read the data from json===========
+//******* read the data from json *******
   //  componentDidMount() {
   //   setTimeout(() => {
   //     let response = data
   //     this.setState({ data: response })
   //   }, 100)   
   // }
-
-
 
   render() {
     return (
