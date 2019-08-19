@@ -18,7 +18,7 @@ class Chart2 extends Component {
         return (
             <BarChart
                 width={800}
-                height={250}
+                height={280}
                 data={this.props.countriesSalesArr}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,

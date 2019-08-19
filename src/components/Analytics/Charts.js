@@ -41,7 +41,6 @@ class Charts extends Component {
             max = Math.max(...arr)
             topEmployee = Object.keys(breakdown).find(key => breakdown[key] === max)
         }
-        // console.log(highestThree)
         return highestThree
     }
 
@@ -60,7 +59,6 @@ class Charts extends Component {
      let categoryArr = Object.entries(categoryObj)
     
      let categorySalesArr = categoryArr.map(c => { return {name: c[0], sales: c[1]} })
-    //  console.log(categorySalesArr);
      return categorySalesArr
     }
 
@@ -108,9 +106,6 @@ class Charts extends Component {
 
             return  newDaysArr
         }
-
-        
-        
 
 
     //

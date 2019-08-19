@@ -33,7 +33,7 @@ class Chart1 extends Component {
                 >
                     <CartesianGrid stroke="#f5f5f5" />
                     <XAxis type="number">
-                        <Label value="Sales" offset={-10} position="insideBottom" />
+                        {/* <Label value="Sales" offset={-10} position="insideBottom" /> */}
                     </XAxis>
                     <YAxis dataKey="name" type="category" />
                     <Tooltip />

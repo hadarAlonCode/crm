@@ -46,7 +46,7 @@ class Update extends Component {
 
     getupdateOwner = () => {
         if (!this.getClientId()) {
-            return  ToastsStore.error("need to put name")
+            return  ToastsStore.error("Customer name must be filled")
         }
         this.props.update(this.getClientId(), "owner", this.state.upadeOwner)
         ToastsStore.success("Owner updated!")
@@ -54,7 +54,7 @@ class Update extends Component {
 
     getupdateEmailType = () => {
         if (!this.getClientId()) {
-            return  ToastsStore.error("need to put name")
+            return  ToastsStore.error("Customer name must be filled")
         }
         this.props.update(this.getClientId(), "emailType", this.state.upadeEmailType)
         ToastsStore.success("Email Type updated!")
@@ -63,10 +63,10 @@ class Update extends Component {
 
     getupdateDeclare = () => {
         if (!this.getClientId()) {
-            return  ToastsStore.error("need to put name")
+            return  ToastsStore.error("Customer name must be filled")
         }
         this.props.update(this.getClientId(), "sold", true)
-        ToastsStore.success("Client Sold!")
+        ToastsStore.success("Client updated as sold!")
 
     }
 
