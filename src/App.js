@@ -20,7 +20,7 @@ class App extends Component {
 
   async getClientData() {
     const response = await axios.get("http://localhost:4000/clients")
-    this.setState({ data: response.data })
+    await this.setState({ data: response.data })
   }
 
   componentDidMount = () => {
@@ -32,6 +32,12 @@ class App extends Component {
     let clientData = { id, key, value }
     await axios.put("http://localhost:4000/client", clientData)
     this.getClientData()
+}
+
+deleteClient = async (clientID) => {
+  await axios.delete(`http://localhost:4000/client/${clientID}`)
+   this.getClientData() 
+ 
 }
 
 addClient =async  (newClient) => {
@@ -63,7 +69,7 @@ addClient =async  (newClient) => {
         <div className="App">
         <Route path="/" exact component={Home}/>
           <Navbar />
-        <Route path="/clients" exact render={() => <Clients state={this.state.data} upatePopUpInfo={this.upatePopUpInfo}/>} />
+        <Route path="/clients" exact render={() => <Clients state={this.state.data} upatePopUpInfo={this.upatePopUpInfo} deleteClient={this.deleteClient}/>} />
         <Route path="/actions" exact render={() => <Actions state={this.state.data} update={this.update} addClient={this.addClient} />}/>
         <Route path="/analytics" exact render={() => <Analytics state={this.state.data} />}/>
         </div>

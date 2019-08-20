@@ -28,6 +28,14 @@ router.post('/client', function (req, res) {
 })
 
 
+router.delete("/client/:clientID", (req, res) => {
+    const ID = req.params.clientID
+    Client.findOneAndRemove({ _id: ID }, (err, body) => {
+        res.end()
+    })
+ })
+
+
 router.put("/client/:clientID", (req,res) => {
     const ID = req.params.clientID
     const info = req.body

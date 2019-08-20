@@ -177,7 +177,7 @@
   padding: 10px 5px;
 }
 .modal > .actions {
-  width: 100%;
+  /* width: 100%; */
   padding: 10px 5px;
   margin: auto;
   text-align: center;
@@ -222,14 +222,27 @@
 
 }
 
-.popButton{
-  background-color: rgb(255, 215, 40);
-  width: 38vw;
+.popDeleteButton{
+  background-color: rgb(255, 40, 40);
   padding: 5px;
   text-align: center;
   font-weight: bold;
   color: black;
   font-size: 18px;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  margin-right: 4vw
+}
+
+.popUpdateButton{
+  background-color: rgb(255, 215, 40);
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  padding-left: 6vw;
+  padding-right: 6vw;
 }
 
 #Button:hover {

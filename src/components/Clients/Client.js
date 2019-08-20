@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Popup from "reactjs-popup";
 import {ToastsContainer, ToastsStore} from 'react-toasts';
+import Clients from './Clients'
+import ReactDOM from 'react-dom'
+
 
 
 var moment = require('moment');
@@ -13,7 +16,7 @@ class Client extends Component {
         this.state = {
             updateName: props.client.name.split(' ')[0],
             updateSurname: props.client.name.split(' ')[1],
-            updateCountry: props.client.country,
+            updateCountry: props.client.country
         }
     }
 
@@ -24,6 +27,14 @@ class Client extends Component {
     updateClient=()=>{
          this.props.upatePopUpInfo(this.state.updateName, this.state.updateSurname, this.state.updateCountry, this.props.client._id)   
          return ToastsStore.success("Updated Client!") 
+    }
+
+    deleteClient = () => {
+        this.props.deleteClient(this.props.client._id)
+        // this.setState({ updateName: this.props.client.name.split(' ')[0],
+        // updateSurname: this.props.client.name.split(' ')[1],
+        // updateCountry: this.props.client.country, })
+        // ReactDOM.unmountComponentAtNode(<Clients />)
     }
 
 
@@ -37,7 +48,8 @@ class Client extends Component {
         let name = this.props.client.name.split(' ')[0]
         let lastName = this.props.client.name.split(' ')[1]
         return (
-            <Popup trigger={<div className="client" onClick={this.popUp}>
+            <Popup trigger={
+            <div className="client" onClick={this.popUp}>
                 <div>{name}</div>
                 <div>{lastName}</div>
                 <div>{this.props.client.country}</div>
@@ -58,7 +70,9 @@ class Client extends Component {
                           <div className="contentPopup" ><span>country:</span> <input placeholder=" Update Country.." name="updateCountry" type="text" onInput={this.handleInput}></input></div>      
                            </div>
                         <div className="actions">  
-                        <div id="Button" onClick={this.updateClient} className="popButton"> Update </div>     
+                        {/* <span id="Button" onClick={this.deleteClient} className="popDeleteButton"> Delete Client </span>     */}
+                        <span id="Button" onClick={this.updateClient} className="popUpdateButton"> Update </span>    
+
                         </div>
                         <ToastsContainer store={ToastsStore}/>
                     </div>
