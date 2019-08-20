@@ -13,8 +13,9 @@ class Filter extends Component {
    handlSelect = (e) => {
         let value = e.target.value
         if(value === "sold"){
-            this.props.filter(true, "sold")
+            this.props.filter( true, "sold")
         } else {
+            this.props.filter( "", "name")            
             this.setState({ category: value })
         }
    }

@@ -34,21 +34,33 @@ class Clients extends Component {
       })
    }
 
+   getClientsWithFilter = () => {
+        return this.props.state 
+        .filter(c => c[this.state.category] === null ? null :
+        this.state.category === "sold" ? c[this.state.category] === true : c[this.state.category].toLowerCase().includes(this.state.input.toLowerCase()))
+        .map((c, i) => <Client key={i} client={c} upatePopUpInfo={this.props.upatePopUpInfo} />)
+   }
+
+
+   getClientWithPaginate=()=>{
+    return this.props.state
+    .filter(c => this.props.state.indexOf(c) >= this.state.lowerIndex && this.props.state.indexOf(c) < this.state.higherIndex)
+    .map((c, i) => <Client key={i} client={c} upatePopUpInfo={this.props.upatePopUpInfo} />)
+   }
+
     render() {
         return (
             <div>
                 <Filter filter={this.filter} value={this.state.input}/>
                 <span> You have {this.props.state.length} Clients</span>
-                <div id="paginate-button">
+                {this.state.input ? null : 
+                    <div id="paginate-button">
                     <span onClick={this.paginate}>{"<"}</span><span> {this.state.lowerIndex}-{this.state.higherIndex} </span><span onClick={this.paginate}>{">"}</span>
-                </div>
+                    </div>}
                 <div className="clients">
-                    <Header />
-                    {this.props.state
-                        .filter(c => c[this.state.category] === null ? null :
-                            this.state.category === "sold" ? c[this.state.category] === true : c[this.state.category].toLowerCase().includes(this.state.input.toLowerCase()))
-                        .filter(c => this.props.state.indexOf(c) >= this.state.lowerIndex && this.props.state.indexOf(c) < this.state.higherIndex)
-                        .map((c, i) => <Client key={i} client={c} upatePopUpInfo={this.props.upatePopUpInfo} />)}
+                    <Header /> 
+                    {this.state.input  ? this.getClientsWithFilter() : this.getClientWithPaginate()  }
+                  
                 </div>
             </div>
         );

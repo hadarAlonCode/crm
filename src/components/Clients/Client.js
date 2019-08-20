@@ -16,22 +16,6 @@ class Client extends Component {
             updateCountry: props.client.country,
         }
     }
-    
-// i have another put request
-
-    // getupdateName = () => {
-    //     if (!this.getClientId()) {
-    //         return alert("need to put name")
-    //     }
-    //     this.props.update(this.props.client._id, "name" , `${this.state.updateName} ${this.state.updateSurname}` )
-    // }
-
-    // getupdateEmailType = () => {
-    //     if (!this.getClientId()) {
-    //         return alert("need to put name")
-    //     }
-    //     this.props.update(this.props.client._id, "country", this.state.country)
-    // }
 
     capitalFirstChart(str){
         return str.charAt(0).toUpperCase() + str.slice(1)
