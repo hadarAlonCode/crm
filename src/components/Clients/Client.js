@@ -31,10 +31,6 @@ class Client extends Component {
 
     deleteClient = () => {
         this.props.deleteClient(this.props.client._id)
-        // this.setState({ updateName: this.props.client.name.split(' ')[0],
-        // updateSurname: this.props.client.name.split(' ')[1],
-        // updateCountry: this.props.client.country, })
-        // ReactDOM.unmountComponentAtNode(<Clients />)
     }
 
 
@@ -70,7 +66,7 @@ class Client extends Component {
                           <div className="contentPopup" ><span>country:</span> <input placeholder=" Update Country.." name="updateCountry" type="text" onInput={this.handleInput}></input></div>      
                            </div>
                         <div className="actions">  
-                        {/* <span id="Button" onClick={this.deleteClient} className="popDeleteButton"> Delete Client </span>     */}
+                        <span id="Button" onClick={this.deleteClient} className="popDeleteButton"> Delete Client </span>    
                         <span id="Button" onClick={this.updateClient} className="popUpdateButton"> Update </span>    
 
                         </div>

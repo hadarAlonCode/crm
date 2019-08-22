@@ -39,14 +39,14 @@ class Clients extends Component {
         return this.props.state 
         .filter(c => c[this.state.category] === null ? null :
         this.state.category === "sold" ? c[this.state.category] === true : c[this.state.category].toLowerCase().includes(this.state.input.toLowerCase()))
-        .map((c, i) => <Client key={i} client={c} upatePopUpInfo={this.props.upatePopUpInfo} deleteClient={this.props.deleteClient} />)
+        .map((c) => <Client key={c._id} client={c} upatePopUpInfo={this.props.upatePopUpInfo} deleteClient={this.props.deleteClient} />)
    }
 
 
    getClientWithPaginate=()=>{
     return this.props.state
     .filter(c => this.props.state.indexOf(c) >= this.state.lowerIndex && this.props.state.indexOf(c) < this.state.higherIndex)
-    .map((c, i) => <Client key={i} client={c} upatePopUpInfo={this.props.upatePopUpInfo} deleteClient={this.props.deleteClient} />)
+    .map((c) => <Client key={c._id} client={c} upatePopUpInfo={this.props.upatePopUpInfo} deleteClient={this.props.deleteClient} />)
    }
 
     render() {
