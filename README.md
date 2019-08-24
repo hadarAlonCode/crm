@@ -3,7 +3,7 @@
 
 CRM is a tool that allows companies to manage everything to-do with their customers.
 
-### Built With
+### Built With:
 - React
 - MongoDB
 - Express
