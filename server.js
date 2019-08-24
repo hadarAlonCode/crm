@@ -5,6 +5,7 @@ const api = require( './server/routes/api' )  // check the path
 const bodyParser = require('body-parser') //install
 const mongoose = require('mongoose')
 mongoose.connect("mongodb://localhost/crmDB", { useNewUrlParser: true })
+// mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/crmDB");
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

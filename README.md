@@ -7,6 +7,7 @@ CRM is a tool that allows companies to manage everything to-do with their custom
 - React
 - MongoDB
 - Express
+- npm packeges
 
 ### features:
 
@@ -15,3 +16,4 @@ CRM is a tool that allows companies to manage everything to-do with their custom
 - A way to edit customer data
 - Features for doing certain actions automatically (sending emails, transferring ownership, etc)
 - A dashboard with graphs/charts/analytics that give a high-level view of the company, usually as related to the customers
+
