@@ -4,17 +4,6 @@ import {
     Legend,
 } from 'recharts';
 
-// const data = [
-//     {
-//         name: 'Page A', sell: 800,
-//     },
-//     {
-//         name: 'Page B', sell: 967,
-//     },
-//     {
-//         name: 'Page C', sell: 1098,
-//     }
-// ];
 
 class Chart1 extends Component {
 
@@ -32,9 +21,7 @@ class Chart1 extends Component {
                     }}
                 >
                     <CartesianGrid stroke="#f5f5f5" />
-                    <XAxis type="number">
-                        {/* <Label value="Sales" offset={-10} position="insideBottom" /> */}
-                    </XAxis>
+                    <XAxis type="number"></XAxis>
                     <YAxis dataKey="name" type="category" />
                     <Tooltip />
                     <Legend />

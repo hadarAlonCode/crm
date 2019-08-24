@@ -6,7 +6,6 @@ import Chart4 from './Charts/Chart4';
 var moment = require('moment');
 
 
-
 class Charts extends Component {
 
 
@@ -14,7 +13,7 @@ class Charts extends Component {
         super()
         this.state = {
             filterCategory: "Country",
-            Category: ["Country", "Email", "Month (all time)", "Owner"]
+            category: ["Country", "Email", "Month (all time)", "Owner"]
             }
     }
 
@@ -127,7 +126,7 @@ class Charts extends Component {
                 </div>
                 <div className="chart"><span className="chartTitle">Sales by </span>
                    <select name="filterChart" onInput={this.handleInputCategory}>
-                 {this.state.Category.map((c,i) => <option key={i}>{c} </option>)}
+                 {this.state.category.map((c,i) => <option key={i}>{c} </option>)}
                    </select>
                    <Chart2 countriesSalesArr={category}/>
                 </div>

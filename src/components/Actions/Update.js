@@ -3,8 +3,6 @@ import Input from './Input';
 import {ToastsContainer, ToastsStore} from 'react-toasts';
 
 
-// import Popup from "reactjs-popup";
-
 class Update extends Component {
 
     constructor() {

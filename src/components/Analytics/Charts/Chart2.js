@@ -3,13 +3,6 @@ import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
-// const data = [
-//     {
-//         name: 'Page A', sales: 4000, 
-//     },
- 
-// ];
-
 
 
 class Chart2 extends Component {

@@ -6,9 +6,9 @@ class Add extends Component {
         super()
         this.state = {
             firstName: "",
-            Surname: "",
-            Country: "",
-            Owner: ""
+            surname: "",
+            country: "",
+            owner: ""
         }
     }
 
@@ -24,7 +24,7 @@ class Add extends Component {
     }
 
     validate = () => {
-        if (this.state.firstName === "" || this.state.Surname === "" || this.state.Country === "" || this.state.Owner === "") {
+        if (this.state.firstName === "" || this.state.surname === "" || this.state.country === "" || this.state.owner === "") {
             return true
         } else {
             return false
@@ -36,9 +36,9 @@ class Add extends Component {
             return ToastsStore.error("All fields must be filled")
         } else {
             this.props.addClient({
-                name: `${this.state.firstName} ${this.state.Surname}`,
-                country: this.state.Country,
-                owner: this.state.Owner,
+                name: `${this.state.firstName} ${this.state.surname}`,
+                country: this.state.country,
+                owner: this.state.owner,
                 firstContact: new Date(),
                 sold: false,
                 emailType: null,
@@ -52,9 +52,9 @@ class Add extends Component {
         return (
             <div>
                 <div className="actionInputSections">First name  <input id="input" name="firstName" placeholder="First name..." onInput={this.handleInput} required ></input></div>
-                <div className="actionInputSections">Surname<input id="input" name="Surname" placeholder="Surname..." onInput={this.handleInput} required ></input></div>
-                <div className="actionInputSections">Country<input id="input" name="Country" placeholder="Country..." onInput={this.handleInput} required ></input></div>
-                <div className="actionInputSections">Owner<input id="input" name="Owner" placeholder="Owner..." onInput={this.handleInput} required ></input></div>
+                <div className="actionInputSections">Surname<input id="input" name="surname" placeholder="Surname..." onInput={this.handleInput} required ></input></div>
+                <div className="actionInputSections">Country<input id="input" name="country" placeholder="Country..." onInput={this.handleInput} required ></input></div>
+                <div className="actionInputSections">Owner<input id="input" name="owner" placeholder="Owner..." onInput={this.handleInput} required ></input></div>
                 <div className="addButton" id="Button" onClick={this.addNewClient}>Add New Client</div>
             </div>
         );
