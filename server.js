@@ -7,12 +7,13 @@ const mongoose = require('mongoose')
 mongoose.connect("mongodb://localhost/crmDB", { useNewUrlParser: true })
 // mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/crmDB");
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'node_modules')))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(express.static(path.join(__dirname, 'src'))) 
-app.use(express.static(path.join(__dirname, 'node_modules')))
+// app.use(express.static(path.join(__dirname, 'src'))) 
+// "start": "react-scripts start",
 
 // app.use(function (req, res, next) {
 //     res.header('Access-Control-Allow-Origin', '*')
