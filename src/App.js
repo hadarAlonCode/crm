@@ -8,6 +8,8 @@ import Analytics from './components/Analytics/Analytics';
 import Actions from './components/Actions/Actions';
 import Home from './components/Home';
 // import data from './data.json';
+const URL_KEY = ""
+// const URL_KEY = "http://localhost:4000"
 
 class App extends Component {
 
@@ -19,7 +21,7 @@ class App extends Component {
   }
 
   async getClientData() {
-    const response = await axios.get("http://localhost:4000/clients")
+    const response = await axios.get(`${URL_KEY}/clients`)
     await this.setState({ data: response.data })
   }
 
@@ -30,18 +32,18 @@ class App extends Component {
  
   update = async (id, key, value) => {
     let clientData = { id, key, value }
-    await axios.put("http://localhost:4000/client", clientData)
+    await axios.put(`${URL_KEY}/client`, clientData)
     this.getClientData()
 }
 
 deleteClient = async (clientID) => {
-  await axios.delete(`http://localhost:4000/client/${clientID}`)
+  await axios.delete(`${URL_KEY}/client/${clientID}`)
    this.getClientData() 
  
 }
 
 addClient =async  (newClient) => {
-  await axios.post("http://localhost:4000/client", newClient)
+  await axios.post(`${URL_KEY}/client`, newClient)
   this.getClientData()
 }
 
@@ -51,7 +53,7 @@ addClient =async  (newClient) => {
     console.log(country);
     console.log(clientID);
 
-  await axios.put(`http://localhost:4000/client/${clientID}`, { name: `${name} ${surname}`, country })
+  await axios.put(`${URL_KEY}/client/${clientID}`, { name: `${name} ${surname}`, country })
   await this.getClientData()
 }
 
