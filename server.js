@@ -4,8 +4,8 @@ const api = require( './server/routes/api' )  // check the path
 const path = require('path')
 const bodyParser = require('body-parser') //install
 const mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost/crmDB", { useNewUrlParser: true })
-// mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/crmDB");
+// mongoose.connect("mongodb://localhost/crmDB", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/crmDB");
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
