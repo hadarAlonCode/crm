@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// app.use(express.static(path.join(__dirname, 'src'))) 
+app.use(express.static(path.join(__dirname, 'src'))) 
 // "start": "react-scripts start",
 
 // app.use(function (req, res, next) {
