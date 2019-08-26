@@ -1,7 +1,7 @@
 const express = require('express') //install
 const app = express()
 const api = require( './server/routes/api' )  // check the path
-// const path = require('path')
+const path = require('path')
 const bodyParser = require('body-parser') //install
 const mongoose = require('mongoose')
 mongoose.connect("mongodb://localhost/crmDB", { useNewUrlParser: true })
