@@ -8,7 +8,9 @@ CRM is a tool that allows companies to manage everything to-do with their custom
 - React
 - MongoDB
 - Express
+- Node.js
 - npm packages
+
 
 ### features:
 
