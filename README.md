@@ -4,6 +4,14 @@ https://hadar-crm.herokuapp.com
 
 CRM is a tool that allows companies to manage everything to-do with their customers.
 
+###### Clients Page screen
+![alt text](/images/home.png "Home Page screenshot")
+###### Action Page
+![alt text](/images/update.png "Action Page screenshot")
+###### Analytics Page
+![alt text](/images/analytics.png "Analytics Page screenshot")
+
+
 ### Built With:
 - React
 - MongoDB

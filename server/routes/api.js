@@ -14,6 +14,7 @@ const data = require('../../src/data.json')
     
     // uploadData()
 
+    
 router.get('/clients', function (req, res) {
     Client.find({}).exec(function (err, data) {
         res.send(data)
