@@ -271,11 +271,11 @@
 
 
 select {
-  -webkit-appearance: button;
+  /* -webkit-appearance: button; */
   -webkit-padding-end: 20px;
   -webkit-padding-start: 2px;
   -webkit-user-select: none;
-  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(rgb(255, 255, 255), #F4F4F4 40%, #E5E5E5);
+  /* background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(rgb(255, 255, 255), #F4F4F4 40%, #E5E5E5); */
   background-position: 97% center;
   background-repeat: no-repeat;
   border: 1px solid #AAA;
@@ -292,7 +292,7 @@ select {
 select {
   margin-left: 5px;
   color: rgb(0, 0, 0);
-  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(rgb(252, 250, 245), #faf9f5 40%, #eeede8);
+  /* background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(rgb(252, 250, 245), #faf9f5 40%, #eeede8); */
   background-color: #faf9f5;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
