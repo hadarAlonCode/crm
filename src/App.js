@@ -8,8 +8,8 @@ import Analytics from './components/Analytics/Analytics';
 import Actions from './components/Actions/Actions';
 import Home from './components/Home';
 // import data from './data.json';
-const URL_KEY = ""
-// const URL_KEY = "http://localhost:4000"
+// const URL_KEY = ""
+const URL_KEY = "http://localhost:4000"
 
 class App extends Component {
 
